@@ -18,8 +18,6 @@ import progressbar
 
 #============================================================
 def MultiTrAdap(Xs,Ys,Xa,Ya,Xt,Yt,nIters = 200):
-    Dais = True
-    print('Dais=',Dais)
     p = progressbar.ProgressBar()
     Xsa = np.concatenate((Xs,Xa))
     Ysa = np.concatenate((Ys,Ya))
@@ -65,7 +63,7 @@ def MultiTrAdap(Xs,Ys,Xa,Ya,Xt,Yt,nIters = 200):
             Eps = 0.01
             
         # Weight update
-        if Dais:
+        if 1:
             Alpha = np.sqrt(Eps/(1-Eps))
             Coef = np.concatenate((Beta*np.ones(Ns),(1/Alpha)*np.ones(Na)))
             wUpdate = np.power(Coef,RorW)
