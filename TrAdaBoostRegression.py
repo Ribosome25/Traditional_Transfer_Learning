@@ -12,7 +12,7 @@ from sklearn.linear_model import Ridge as LR
 from sklearn.ensemble import RandomForestRegressor as RFR
 #-------Functions-----------
 def Load_BM(BM_id = 1,test_ratio = 0.01):
-    file_name = 'MB_'+str(BM_id)+'.mat'
+    file_name = '.\data\MB_'+str(BM_id)+'.mat'
     file_input = {}
     Load(file_name,mdict=file_input)
     Xs = file_input['X2']
@@ -108,16 +108,16 @@ def RegreTrAdap(Xs,Ys,Xa,Ya,Xt,Yt,nIters = 200,Temp_Para = 20):
 
 
 nIters = 100
-for Z in np.linspace(0,100,num = 21):
-    SPweights, Acc_auxi, All_test_prd, Acc_test,Acc_AdaOnly = RegreTrAdap(Xs,Ys,Xa,Ya,Xt,Yt,nIters = nIters,Temp_Para = Z)
-    
-    PrdDf = pd.DataFrame.from_dict(All_test_prd)    
-    HalfDf = PrdDf.iloc[:,round(nIters/2):]
-    HalfWeights = 1-pd.DataFrame(Acc_auxi[round(nIters/2):])
-    HalfWeights = HalfWeights/HalfWeights.sum()
-    BoostPrd = np.dot(HalfDf,HalfWeights)
-    AccB = Metrics.NRMSE(Yt,BoostPrd)[0]
-    print('\n==>>',Z,AccB)
+SPweights, Acc_auxi, All_test_prd, Acc_test,Acc_AdaOnly = RegreTrAdap(Xs,Ys,Xa,Ya,Xt,Yt,nIters = nIters)
+
+PrdDf = pd.DataFrame.from_dict(All_test_prd)    
+HalfDf = PrdDf.iloc[:,round(nIters/2):]
+HalfWeights = 1-pd.DataFrame(Acc_auxi[round(nIters/2):])
+HalfWeights = HalfWeights/HalfWeights.sum()
+BoostPrd = np.dot(HalfDf,HalfWeights)
+AccB = Metrics.NRMSE(Yt,BoostPrd)[0]
+print('\n==>>',Z,AccB)
+
 #===================Plot=====================
 import matplotlib.pyplot as plt
 fig1 = plt.figure()
