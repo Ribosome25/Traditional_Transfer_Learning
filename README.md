@@ -2,7 +2,8 @@
 
 This is an demo for Traditional transfer learning techniques.
 
-## 1. Adaboost. Ref. Boosting for Transfer Learning, ICML 2007.
+## 1. TrAdaboost. 
+Ref. Boosting for Transfer Learning, ICML 2007.<br>
 
 ## 2. Regression Tradaboost. 
 
