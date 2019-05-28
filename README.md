@@ -12,7 +12,7 @@ Ref. *Boosting for Transfer Learning,* ICML 2007.<br>
 
 ## 3. Instance weighting kernel ridge regression
 Instance-weighted kernel ridge regression<br>
-     [Code](./IW_KRR.py), [Demo](./iwKrr_demo.py)   
+     [Code](./IW_KRR.py), [Demo](./IWKRR_Demo.py)   
 Ref: *Jochen Garcke, Importance Weighted Inductive Transfer Learning for Regression*<br>
 
 In this scenario, the source domain data are all labeled, and a small portion from the target domain is labeled too. Here we call this part “Auxiliary data”. The rest of the target domain data is unlabeled and called “Test data”.<br>
