@@ -30,7 +30,14 @@ In this step, the sample weights of the source data are obtained from \[X_source
 3)	Then a weighted kernel ridge regression is performed. The weights of Source data are normalized to \[0,1], and the weights for Auxiliary data are all 1. Test data are predicted using this model.  <br>
 This model has 5 hyper parameters: the sigma for the rbf kernel; the lambda in the 1st ridge regression; the eta in the weight-alpha relationship; the gamma in the 2nd step for regularizing the alpha; and the lambda in the 3rd step.<br>
 
-## 4. Correlation alignment. (CORAL)
+## 4. Kernel mean matching (KMM)
+
+*Ref: Jiayuan Huang; Correcting Sample Selection Bias by Unlabeled Data <br>
+Corinna Cortes; Domain Adaptation and Sample Bias Correction Theory and Algorithm for Regression<br>*
+     [Code](./IW_KRR.py), [Demo](./IWKRR_Demo.py)   
+
+
+## 5. Correlation alignment. (CORAL)
 
   The assumption is in different tasks, the correlation between features should be similar. e.g. A hat should always have high correlation to the head. <br>
   (Does that means CORAL is more efficient in top layers?)<br>
