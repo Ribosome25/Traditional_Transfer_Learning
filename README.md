@@ -33,10 +33,10 @@ In this step, the sample weights of the source data are obtained from \[X_source
 This model has 5 hyper parameters: the sigma for the rbf kernel; the lambda in the 1st ridge regression; the eta in the weight-alpha relationship; the gamma in the 2nd step for regularizing the alpha; and the lambda in the 3rd step.<br>
 
 ## 4. Kernel mean matching (KMM)
-
+   [Code](./KMM.py), [Demo](./Kmm_Demo.py)   <br>
 *Ref: Jiayuan Huang; Correcting Sample Selection Bias by Unlabeled Data <br>
 Corinna Cortes; Domain Adaptation and Sample Bias Correction Theory and Algorithm for Regression<br>*
-     [Code](./KMM.py), [Demo](./Kmm_Demo.py)   
+Prerequisite: cvxopt
 
 
 ## 5. Correlation alignment. (CORAL)
