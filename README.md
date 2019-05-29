@@ -4,9 +4,11 @@
 
 ## 1. TrAdaboost. 
 Ref. *Boosting for Transfer Learning,* ICML 2007.<br>
-
+     [Demo](./TrAdbMultiClass.py)<br>
+     
+     <br>
 ## 2. Regression Tradaboost. 
-
+   [Demo](./TrAdaBoostRegression.py) <br>
   In the classification case, the weights are multiplied with `coef.^(0 or 1).` <br>
   While in the regression Tradaboost, the abs error is used as the power term. 
 
@@ -38,7 +40,7 @@ Corinna Cortes; Domain Adaptation and Sample Bias Correction Theory and Algorith
 
 
 ## 5. Correlation alignment. (CORAL)
-
+[Code](./Coral.M)
   The assumption is in different tasks, the correlation between features should be similar. e.g. A hat should always have high correlation to the head. <br>
   (Does that means CORAL is more efficient in top layers?)<br>
   The correlation descrepancy between mapped source data and the target data is minimized.
