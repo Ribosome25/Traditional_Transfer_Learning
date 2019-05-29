@@ -34,7 +34,7 @@ This model has 5 hyper parameters: the sigma for the rbf kernel; the lambda in t
 
 *Ref: Jiayuan Huang; Correcting Sample Selection Bias by Unlabeled Data <br>
 Corinna Cortes; Domain Adaptation and Sample Bias Correction Theory and Algorithm for Regression<br>*
-     [Code](./IW_KRR.py), [Demo](./IWKRR_Demo.py)   
+     [Code](./KMM.py), [Demo](./Kmm_Demo.py)   
 
 
 ## 5. Correlation alignment. (CORAL)
