@@ -57,3 +57,11 @@ and it is a quad problem can be solved with optimizer e.g. quadprog(). <br>
   (Does that means CORAL is more efficient in top layers?)<br>
   The correlation descrepancy between mapped source data and the target data is minimized.
   
+## A very important distance metric, MDD
+Ref. *Sinno Jialin Pan; Transfer Learning via Dimensionality Reduction,* AAAI 2008.<br>
+**nonparametric estimate criterion**<br>
+By definition, MDD is the max distance in all the mapped spaces. Dist is zero *iff.* P = Q. <br>
+The empirical estimate of distance between P and Q defined by MMD is as follows:.... where H is a universal RKHS .<br>
+the distance between distributions of two samples is equivalent to the distance between the means of the two samples mapped into a RKHS.
+
+ distance between distributions of two samples is equivalent to the distance between the means of the two samples mapped into a RKHS.
