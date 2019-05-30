@@ -36,18 +36,18 @@ This model has 5 hyper parameters: the sigma for the rbf kernel; the lambda in t
    [Code](./KMM.py), [Demo](./Kmm_Demo.py)   <br>
 *Ref: Jiayuan Huang; Correcting Sample Selection Bias by Unlabeled Data <br>
 Corinna Cortes; Domain Adaptation and Sample Bias Correction Theory and Algorithm for Regression<br>*
-Prerequisite: cvxopt
+Prerequisite: cvxopt<br>
 
-KMM works by assigning weights to Source data samples, such that the distribution discrepancy between Source and Target is minimized. 
-<b> How is the discrepancy represented and minimized?</b>
-The distribution discrepancy is evaluated by MDD. i.e. minimizing the distance of mean embedding of each dimension:
- ![alt text](./imgs/kmm_fig1.png)
-With regarding to the ***β***. With constrains. 
-This distance is a quadratic term. After expanding, *Φ(X_source) Φ(X_source)* is kernel ***K***,  *Φ(X_source) Φ (X_target)* is kernel ***κ***. 
-So this problem is represented as:
- ![alt text](./imgs/kmm_fig2.png)
-Where the B is the Bound, limiting the *“scope of discrepancy”* between two X sets. In other words it limits the upper bound of each weight value. And the ε *“ensures that the measure ***β (x)Pr(x)*** is close to a probability distribution”*. (The integrated discrepancy?)
-and it is a quad problem can be solved with optimizer e.g. quadprog(). 
+KMM works by assigning weights to Source data samples, such that the distribution discrepancy between Source and Target is minimized. <br>
+<b> How is the discrepancy represented and minimized?</b><br>
+The distribution discrepancy is evaluated by MDD. i.e. minimizing the distance of mean embedding of each dimension:<br>
+ ![alt text](./imgs/kmm_fig1.png)<br>
+With regarding to the ***β***. With constrains. <br>
+This distance is a quadratic term. After expanding, *Φ(X_source) Φ(X_source)* is kernel ***K***,  *Φ(X_source) Φ (X_target)* is kernel ***κ***. <br>
+So this problem is represented as:<br>
+ ![alt text](./imgs/kmm_fig2.png)<br>
+Where the B is the Bound, limiting the *“scope of discrepancy”* between two X sets. In other words it limits the upper bound of each weight value. And the ε *“ensures that the measure ***β (x)Pr(x)*** is close to a probability distribution”*. (The integrated discrepancy?)<br>
+and it is a quad problem can be solved with optimizer e.g. quadprog(). <br>
 
 
 
