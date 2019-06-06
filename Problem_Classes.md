@@ -10,7 +10,10 @@ Few reserches are addressing this kind of problems, and most of them are based o
 
 ### 2. Domain Adaption
 This term is used where the marginal distributions are different, but we assume conditional distribution is the same. <br>
-
+Two methods: 1) Instance weighting, learning the instance weights ***w(x)***; <br>
+e.g. KMM, [KL-based KLIEP](https://papers.nips.cc/paper/3248-direct-importance-estimation-with-model-selection-and-its-application-to-covariate-shift-adaptation.pdf), TrAdaBoost.<br>
+Only works better when distribution descrepency is not large. <br>
+2) Feature expression: leaning the mapping function of feature space phi(X). Such that the Dist( Ps(phi(x)), Pt(phi(x) ) is minimized. <br>
 
 ### 3. Multi-task Learning
 This is another mainstream of transfer learning. The conditional distributions are different between domains. (Is the marginal distributions equal?)<br>
