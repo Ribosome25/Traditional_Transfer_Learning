@@ -66,6 +66,37 @@ Xs  * Xs’ * Xt is the transformed Source principle components. <br>
 
 ## 6. Subspace distribution alignment. (SDA)
 [Matlab](./SDA_demo.m)<br>
+ref:<br>
+Assumption: Source and Target should have same principle components. And the distributions in the principle component subspaces should also be the same. <br>
+In the SA, both Source and Target are projected to the PCs of Target, and the principle components of Source and Target are matched. However, the distributions can be different. <br>
+SDA matches the variances of the projected data. <br>
+The PCs of source are orthogonal, so the eigenvalues form a diagonal matrix. Beside the transform of PC directions, SDA also includes a term balancing the scale of PC projection. <br>
+Suppose Es and Et are the eigenvalues corresponding to Ss and St. Then we could set Ws = E1/2s and Wt = E1/2t as Es and Et are the variances of the orthogonal principal components. Thus, we assign <br>
+AT S = Ws-1Wt = E-1/2s * E1/2t. (Whitening the PCs of Source first and recolor the PC variance with the Target).<br>
+Code:<br>
+[Xss,~,Ess] = pca(Xs);<br>
+[Xtt,~,Ett] = pca(Xt); % the E is Principal component variances; already sorted<br>
+Ms = PCs * (PCs'*PCt) * diag((PEs.^-0.5 .* PEt.^0.5)) ;<br>
+Mt = PCt;<br>
+%<br>
+newS = Xs * Ms;<br>
+newT = Xt * Mt;<br>
+<br>
+Experiment:<br>
+1)	Generate data:<br>
+Xs = mvnrnd([1 3],[1 0; 0 1],600);
+Xt = mvnrnd([4 1],[10 -5; -5 5],400);
+Xs = zscore(Xs);
+Xt = zscore(Xt);
+
+2)	Matching.
+
+3)	Std of Xs, Xt projected to their PCs: <br>
+Source: 1.0030    0.9970, Target: 1.3207    0.5057
+
+Std after matching: <br>
+Source: 1.3128    0.5087, Target: 1.3207    0.5057
+
 ## 7. Correlation alignment. (CORAL)
 [Matlab](./Coral.m)<br>
   The assumption is in different tasks, the correlation between features should be similar. e.g. A hat should always have high correlation to the head. <br>
