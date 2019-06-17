@@ -3,16 +3,7 @@ Xs = mvnrnd([1 3],[1 0; 0 1],600);
 Xt = mvnrnd([4 1],[10 -5; -5 5],400);
 Xs = zscore(Xs);
 Xt = zscore(Xt);
-% %%
-% BM_id = 1;
-% 
-% load(strcat('./data/stdX/MB_',num2str(BM_id),'.mat'));
-% % load(strcat('./data/rawX/Data_BM_',num2str(BM_id),'.mat'));
-% fprintf("==============\nBM_%d\n",BM_id);
-% Xs = zscore(X2);
-% Xt = zscore(X1);
-% Ys = Y2;
-% Yt = Y1;
+
 %%
 subspace_dim_d = 2;
 [Xss,~,Ess] = pca(Xs);
