@@ -1,6 +1,7 @@
 # Traditional Transfer Learning
 
   This is an demo for Traditional transfer learning techniques.
+## Instance-weighting methods
 
 ## 1. TrAdaboost. 
 Ref. *Boosting for Transfer Learning,* ICML 2007.<br>
@@ -50,8 +51,22 @@ Where the B is the Bound, limiting the *“scope of discrepancy”* between two 
 and it is a quad problem can be solved with optimizer e.g. quadprog(). <br>
 
 
+## Subspace matching methods
+## 5. Subspace Alignment (SA)
+[Matlab](./SA.m)<br>
+*Ref. Fernando, Basura, et al. "Unsupervised visual domain adaptation using subspace alignment." Proceedings of the IEEE international conference on computer vision. 2013.* <br>
+Assumption: Source and Target should have same principle components. (The first several principle components should have the same directions.)<br>
+Optimization: (Data is first standardized). The principle bases are extracted from PCA. Named Xs, Xt here. (Note that the Xs Xt are not data matrixes but the principle components axis.) <br>
+After a linear transformation M, *dist( XsM, Xt )* is minimized. The optimization problem is <br>
+min *F(M) = ||XsM-Xt||^2 Fro*.
+Because the Frobenius norm is invariant to orthonormal operations, <br>
+F(M)=‖X_s^T X_s M-X_s^T X_T ‖_F^2=‖M-X_s^T X_T ‖_F^2.<br>
+Thus M=X_s^T X_T <br>
+Xs  * Xs’ * Xt is the transformed Source principle components. <br>
 
-## 5. Correlation alignment. (CORAL)
+## 6. Subspace distribution alignment. (SDA)
+[Matlab](./SDA_demo.m)<br>
+## 7. Correlation alignment. (CORAL)
 [Matlab](./Coral.m)<br>
   The assumption is in different tasks, the correlation between features should be similar. e.g. A hat should always have high correlation to the head. <br>
   (Does that means CORAL is more efficient in top layers?)<br>
