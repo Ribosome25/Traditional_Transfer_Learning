@@ -3,17 +3,17 @@
   This is an demo for Traditional transfer learning techniques.
 ## Instance-weighting methods
 
-## 1. TrAdaboost. 
+### 1. TrAdaboost. 
 Ref. *Boosting for Transfer Learning,* ICML 2007.<br>
      [Demo](./TrAdbMultiClass.py)<br>
      
      <br>
-## 2. Regression Tradaboost. 
+### 2. Regression Tradaboost. 
    [Demo](./TrAdaBoostRegression.py) <br>
   In the classification case, the weights are multiplied with `coef.^(0 or 1).` <br>
   While in the regression Tradaboost, the abs error is used as the power term. 
 
-## 3. Instance weighting kernel ridge regression
+### 3. Instance weighting kernel ridge regression
 Instance-weighted kernel ridge regression<br>
      [Code](./IW_KRR.py), [Demo](./IWKRR_Demo.py)   
 Ref: *Jochen Garcke, Importance Weighted Inductive Transfer Learning for Regression*<br>
@@ -33,7 +33,7 @@ In this step, the sample weights of the source data are obtained from \[X_source
 3)	Then a weighted kernel ridge regression is performed. The weights of Source data are normalized to \[0,1], and the weights for Auxiliary data are all 1. Test data are predicted using this model.  <br>
 This model has 5 hyper parameters: the sigma for the rbf kernel; the lambda in the 1st ridge regression; the eta in the weight-alpha relationship; the gamma in the 2nd step for regularizing the alpha; and the lambda in the 3rd step.<br>
 
-## 4. Kernel mean matching (KMM)
+### 4. Kernel mean matching (KMM)
    [Code](./KMM.py), [Demo](./Kmm_Demo.py)   <br>
 *Ref: Jiayuan Huang; Correcting Sample Selection Bias by Unlabeled Data <br>
 Corinna Cortes; Domain Adaptation and Sample Bias Correction Theory and Algorithm for Regression<br>*
@@ -52,7 +52,7 @@ and it is a quad problem can be solved with optimizer e.g. quadprog(). <br>
 
 
 ## Subspace matching methods
-## 5. Subspace Alignment (SA)
+### 5. Subspace Alignment (SA)
 [Matlab](./SA.m)<br>
 *Ref. Fernando, Basura, et al. "Unsupervised visual domain adaptation using subspace alignment." Proceedings of the IEEE international conference on computer vision. 2013.* <br>
 Assumption: Source and Target should have same principle components. (The first several principle components should have the same directions.)<br>
@@ -64,7 +64,7 @@ F(M)=‖X_s^T X_s M-X_s^T X_T ‖_F^2=‖M-X_s^T X_T ‖_F^2.<br>
 Thus M=X_s^T X_T <br>
 Xs  * Xs’ * Xt is the transformed Source principle components. <br>
 
-## 6. Subspace distribution alignment. (SDA)
+### 6. Subspace distribution alignment. (SDA)
 [Matlab](./SDA_demo.m)<br>
 ref:<br>
 Assumption: Source and Target should have same principle components. And the distributions in the principle component subspaces should also be the same. <br>
@@ -97,13 +97,13 @@ Source: 1.0030    0.9970, Target: 1.3207    0.5057
 Std after matching: <br>
 Source: 1.3128    0.5087, Target: 1.3207    0.5057
 
-## 7. Correlation alignment. (CORAL)
+### 7. Correlation alignment. (CORAL)
 [Matlab](./Coral.m)<br>
   The assumption is in different tasks, the correlation between features should be similar. e.g. A hat should always have high correlation to the head. <br>
   (Does that means CORAL is more efficient in top layers?)<br>
   The correlation descrepancy between mapped source data and the target data is minimized.
   
-## A very important distance metric, MDD
+### A very important distance metric, MDD
 Ref. *Sinno Jialin Pan; Transfer Learning via Dimensionality Reduction,* AAAI 2008.<br>
 **nonparametric estimate criterion**<br>
 By definition, MDD is the max distance in all the mapped spaces. Dist is zero *iff.* P = Q. <br>
