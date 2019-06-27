@@ -65,7 +65,7 @@ Thus M=X_s^T X_T <br>
 Xs  * Xs’ * Xt is the transformed Source principle components. <br>
 
 ### 6. Subspace distribution alignment. (SDA)
-[Matlab](./SDA_demo.m)<br>
+[Python](./SDA.py); [Matlab Demo](./SDA_demo.m)<br>
 ref:<br>
 Assumption: Source and Target should have same principle components. And the distributions in the principle component subspaces should also be the same. <br>
 In the SA, both Source and Target are projected to the PCs of Target, and the principle components of Source and Target are matched. However, the distributions can be different. <br>
