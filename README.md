@@ -99,7 +99,8 @@ Source: 1.3128    0.5087, Target: 1.3207    0.5057
 
 ### 7. Correlation alignment. (CORAL)
 [Matlab](./Coral.m)<br>
-*Ref: Sun, Baochen, Jiashi Feng, and Kate Saenko. "Correlation alignment for unsupervised domain adaptation." Domain Adaptation in Computer Vision Applications. Springer, Cham, 2017. 153-171.*
+*Ref: Sun, Baochen, Jiashi Feng, and Kate Saenko. "Correlation alignment for unsupervised domain adaptation." Domain Adaptation in Computer Vision Applications. Springer, Cham, 2017. 153-171.*<br>
+
   The assumption of CORAL is:<br>
 In different tasks, the correlation between features should be similar. For example, a hat should always have high correlation to the head; heights should have similar correlation to body weight among different populations.<br>
   *(Does that means CORAL is more efficient in top layers?)*<br>
