@@ -99,9 +99,15 @@ Source: 1.3128    0.5087, Target: 1.3207    0.5057
 
 ### 7. Correlation alignment. (CORAL)
 [Matlab](./Coral.m)<br>
-  The assumption is in different tasks, the correlation between features should be similar. e.g. A hat should always have high correlation to the head. <br>
-  (Does that means CORAL is more efficient in top layers?)<br>
-  The correlation descrepancy between mapped source data and the target data is minimized.
+*Ref: Sun, Baochen, Jiashi Feng, and Kate Saenko. "Correlation alignment for unsupervised domain adaptation." Domain Adaptation in Computer Vision Applications. Springer, Cham, 2017. 153-171.*
+  The assumption of CORAL is:<br>
+In different tasks, the correlation between features should be similar. For example, a hat should always have high correlation to the head; heights should have similar correlation to body weight among different populations.<br>
+  *(Does that means CORAL is more efficient in top layers?)*<br>
+  By applying a linear transformation A on Source data matrix, the correlation discrepancy between mapped source data and the target data is minimized:<br> 
+  ![alt text](./imgs/coral1.png)<br>
+In practice, the CORAL whitens the Source Cov, then recolor it with the Target Cov. Instead of SVD, CORAL adds a small regularization term then takes the inverse.<br>
+  ![alt text](./imgs/coral2.png)<br>
+
   
 ### A very important distance metric, MDD
 Ref. *Sinno Jialin Pan; Transfer Learning via Dimensionality Reduction,* AAAI 2008.<br>
