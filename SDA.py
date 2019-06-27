@@ -30,7 +30,7 @@ def fit_SDA(Xs,Xt,n_components = 30, flag = False):
     newS = np.dot(Xs , Ms)
     newT = np.dot(Xt , Mt)
     
-    if flag: # this is returning the scaled PCA. Data points projected on PCs already. 
+    if flag: # this is returning the scaled PCA. Data points projected on PCs. 
         return np.dot(prj_S, var_ratio) , prj_T
     
     return newS, newT
