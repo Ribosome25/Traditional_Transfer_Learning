@@ -14,7 +14,7 @@ def fit_SDA(Xs,Xt,n_components = 30, flag = False):
     Xt = scale(Xt)
     pca = PCA(n_components=n_components)
     pca.fit(Xs)
-    pc_S = pca.components_ # n_pcs x n_fts. Transposted from matlab one 
+    pc_S = pca.components_ # n_pcs x n_fts. Transposted compared to the matlab one 
     pe_S = pca.explained_variance_
     prj_S = pca.fit_transform(Xs)
     
@@ -30,7 +30,7 @@ def fit_SDA(Xs,Xt,n_components = 30, flag = False):
     newS = np.dot(Xs , Ms)
     newT = np.dot(Xt , Mt)
     
-    if flag:
+    if flag: # this is returning the scaled PCA. Data points projected on PCs already. 
         return np.dot(prj_S, var_ratio) , prj_T
     
     return newS, newT
