@@ -98,7 +98,8 @@ Std after matching: <br>
 Source: 1.3128    0.5087, Target: 1.3207    0.5057
 
 ### 7. Correlation alignment. (CORAL)
-[Matlab](./Coral.m)<br>
+[Matlab](./Coral.m) [Python](./CORAL.py); [Demo](./CORAL_demo.py) <br>
+
 *Ref: Sun, Baochen, Jiashi Feng, and Kate Saenko. "Correlation alignment for unsupervised domain adaptation." Domain Adaptation in Computer Vision Applications. Springer, Cham, 2017. 153-171.*<br>
 
   The assumption of CORAL is:<br>
