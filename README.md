@@ -111,7 +111,7 @@ In practice, the CORAL whitens the Source Cov, then recolor it with the Target C
   ![alt text](./imgs/coral2.png)<br>
 
   
-### A very important distance metric, MDD
+### Distance metric, MDD
 Ref. *Sinno Jialin Pan; Transfer Learning via Dimensionality Reduction,* AAAI 2008.<br>
 **nonparametric estimate criterion**<br>
 By definition, MDD is the max distance in all the mapped spaces. Dist is zero *iff.* P = Q. <br>
